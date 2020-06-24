@@ -27,4 +27,4 @@ dist = scipy.stats.norm(loc=mean, scale=std)
 prob = dist.cdf(185.42) - dist.cdf(177.8) #Heights converted to cm
 ```
 
-### So the probability of being able to apply, given that you are male is .343. To fix for total population.
+### So the probability of being able to apply, given that you are male is .343.
