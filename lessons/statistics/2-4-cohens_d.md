@@ -1,5 +1,5 @@
 [Think Stats Chapter 2 Exercise 4](http://greenteapress.com/thinkstats2/html/thinkstats2003.html#toc24) (Cohen's d)
-## This problem asked us to investigate the question that was asked us to look at Cohen's d effect size measure on first born children and other born children on their total weight and their mother's pregnancy length. In other words, we are asked to  measure the effect of first borns on weight and pregnancy length compared to the weight  and pregnancy length of other born children. 
+## We are asked to look at Cohen's d effect size measure on first born children and other born children on their total weight and their mother's pregnancy length. In other words, we are asked to  measure the effect of first borns on weight and pregnancy length compared to the weight  and pregnancy length of other born children. 
 
 ### First we need a function to compute Cohen's d. Then we break up our data into first born pregnancies and other born pregnancies.
 
