@@ -27,9 +27,4 @@ dist = scipy.stats.norm(loc=mean, scale=std)
 prob = dist.cdf(185.42) - dist.cdf(177.8) #Heights converted to cm
 ```
 
-### So the probability of being able to apply, given that you are male is .343. To fix for total population, we just need to find the probability of being male.
-
-```
-151800000/328200000 = 0.463
-```
-### This does the trick, given a total population of 328.2 million and male population of 151.8 million, there is a .463 chance of being male, so the probability of being able to apply to the blue man group is .463*.343 = .159! I guess the blue man group is more selective than I originally thought, maybe they should make it the blue people group to be more with the times.
+### So the probability of being able to apply, given that you are male is .343. To fix for total population.
