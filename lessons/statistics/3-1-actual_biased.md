@@ -40,8 +40,9 @@ thinkplot.config(xlabel='Number of Kids in Household', ylabel='Probability')
 ```
 ![PMF graphs](ch3ex1.png)
 ### Computing the means of each pmf,
-```print("Actual Mean:", actual_pmf.Mean())
-   print("Biased Mean:", biased_pmf.Mean())
+```
+    print("Actual Mean:", actual_pmf.Mean())
+    print("Biased Mean:", biased_pmf.Mean())
 ```
 ### We find that the actual mean is around 1.02 children, while the biased mean is around 2.4 children!
 #### Households with n children got overrepresented by n times, Meaning households with zero children got their pmf values bumped down to zero and households with larger amounts of children gotincreased in the values of their pmf.
