@@ -86,7 +86,58 @@ Bayes' Theorem is an important tool in understanding what we really know, given 
 
 Elvis Presley had a twin brother who died at birth.  What is the probability that Elvis was an identical twin? Assume we observe the following probabilities in the population: fraternal twin is 1/125 and identical twin is 1/300.  
 
->> REPLACE THIS TEXT WITH YOUR RESPONSE
+#### In order to solve this question, we can create a Bayes table.
+
+```
+#If the probability of frat=(1/125) and the prob of ident=(1/300) then
+p_twin = (1/125) + (1/300)
+#The data tells us that elvis' brother was already a twin, so
+#What we should really be looking at is the probability of frat 
+#and ident given they are twins. Since the P(twins) = 1,
+#Bayes thm tells us that
+p_frat = (1/125) / p_twin
+p_ident = (1/300) / p_twin
+print(p_frat, p_ident)
+
+Out:0.7058823529411764 0.29411764705882354
+
+```
+
+```
+#Our set of hypotheses have to be mutually and collectively exclusive
+hypothes = ['Frat', 'Ident']
+df = pd.DataFrame(index = hypothes)
+#First we have to add the prior probabilities of each hypothesis
+df['prior'] = p_frat, p_ident
+#Then we add the likelihood, which is the probability of the data 
+#given the hypothesis. The data in this case is elvis had a twin brother.
+#Suppose elvis' twin was identical,
+#the the likelihood is 100% since being 
+#identical implies being the same sex as Elvis.
+#On the other hand, suppose elvis' twin was fraternal, then the likelihood is 50%
+#since being fraternal means possibly being the same sex as Elvis, assuming
+#the P(male) = P(female) = .5
+df['likelihood'] = [.5, 1]
+#Now we can multiply the two columns together to get the unnormalized
+#posterior
+df['unnormpost'] = df['likelihood'] * df['prior']
+#Now we just have to normalize by dividing by the sum of the probabilities
+#gathered in unnormpost.
+sum_data = df['unnormpost'].sum()
+df['posterior'] = df['unnormpost']/sum_data
+#this is the posterior probability because likelihood*prior probability
+#is proportional to the posterior probability. 
+df
+#thus the probability of elvis having an identical twin given he had a
+#twin brother is 54.5%
+
+Out:          prior 	likelihood 	unnormpost 	posterior
+    Frat 	0.705882 	0.5 	0.352941 	0.545455
+    Ident 	0.294118 	1.0 	0.294118 	0.454545
+```
+
+
+
 
 ---
 
