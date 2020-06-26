@@ -144,7 +144,8 @@ Out:          prior 	likelihood 	unnormpost 	posterior
 ### Q6. Bayesian &amp; Frequentist Comparison  
 How do frequentist and Bayesian statistics compare?
 
->> REPLACE THIS TEXT WITH YOUR RESPONSE
+#### Please view the following nbviewer link to a jupyter notebook where I discuss this.
+[Bayesian vs Frequentist](https://nbviewer.jupyter.org/github/Dyllanjrusher/onl20_ds3/blob/master/lessons/statistics/Bayesian_vs_Frequentist.ipynb)
 
 ---
 
